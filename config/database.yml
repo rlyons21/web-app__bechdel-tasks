@@ -1,0 +1,6 @@
+development:
+  adapter: sqlite3
+  database: bechdel.db
+test:
+  adapter: sqlite3
+  database: bechdel-test.db

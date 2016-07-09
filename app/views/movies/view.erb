@@ -1,0 +1,80 @@
+<h1>
+    <%= @movie.title %><br>
+    <small>directed by <%= @movie.director %></small>
+</h1>
+
+<img src="<%= @movie.image %>" alt="<%=@movie.title%>">
+
+<p>
+	<% if !@movie.result %>	
+		This movie has not yet been rated using the Bechdel test.
+	<% elsif @movie.result.is_bechdel == true %>
+		This movie <strong>passes</strong> the Bechdel test!
+
+	<% else @movie.result.is_bechdel == false %>
+		This movie <strong>does not pass</strong> the Bechdel test.
+	<% end %>
+</p>
+
+<% if !@movie.result %>
+	
+	<h4>Add Bechdel rating:</h4>
+		<p>Please select the criteria that this movie fulfills:</p>
+
+	<form action="/results/<%= @movie.id %>/add" method="post">
+
+		<div>
+		  <label>
+		    <input type="checkbox" name="q1" value="true">
+		    The movie has to have at least two named women in it
+		  </label>
+		</div>
+
+		<div>
+		  <label>
+		    <input type="checkbox" name="q2" value="true">
+		    Those women talk to each other
+		  </label>
+		</div>
+
+		<div>
+		  <label>
+		    <input type="checkbox" name="q3" value="true">
+		    About something besides a man
+		  </label>
+		</div>
+
+		<input type="submit">
+	</form>
+
+<% else %>
+
+	<h4>Edit Bechdel rating:</h4>
+	<p>Please select the criteria that this movie fulfills:</p>
+
+	<form action="/results/<%= @movie.id %>/edit" method="post">
+		<div>
+		  <label>
+		    <input type="checkbox" name="q1" value="true" <%= "checked" if @movie.result.q1 %>>
+		    The movie has to have at least two named women in it
+		  </label>
+		</div>
+
+		<div>
+		  <label>
+		    <input type="checkbox" name="q2" value="true" <%= "checked" if @movie.result.q2 %>>
+		    Those women talk to each other
+		  </label>
+		</div>
+
+		<div>
+		  <label>
+		    <input type="checkbox" name="q3" value="true" <%= "checked" if @movie.result.q3 %>>
+		    About something besides a man
+		  </label>
+		</div>
+
+		<input type="submit">
+	</form>
+
+<% end %>

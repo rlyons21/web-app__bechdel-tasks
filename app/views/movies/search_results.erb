@@ -1,0 +1,45 @@
+<div>
+  <div class="container">
+    <h3>The Bechdel Test</h3>
+
+    <h4>
+      1. The movie has to have at least two women in it...<br>
+      2. ...who talk to each other<br>
+      3. ...about something besides a man.
+    </h4>
+
+    <p>
+      <a href="https://en.wikipedia.org/wiki/Bechdel_test">Find out more about the Bechdel Test.</a>
+    </p>
+  </div>
+</div>
+
+<div>
+  <div class="container">
+    <h1>
+      Search Results
+    </h1>
+
+    <% if @list_of_movies != nil && @bechdel == "1" %>
+  		<% @list_of_movies.each do |movie| %>
+  			<% if movie.result.is_bechdel == true %>
+			    <div class="movie">
+			      <a href="/movies/<%= movie.id %>/view">
+			        <img src="<%= movie.image %>">
+			      </a>
+			    </div>
+  			<% end %>
+			<% end %>
+    <% elsif @list_of_movies != nil && @bechdel == "2" %>
+  		<% @list_of_movies.each do |movie| %>
+		    <div class="movie">
+		      <a href="/movies/<%= movie.id %>/view">
+		        <img src="<%= movie.image %>">
+		      </a>
+		    </div>
+			<% end %>
+    <% else %>
+    	<p>No movies match your search.</p>
+    <%end%>
+   </div>
+</div>

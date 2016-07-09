@@ -1,0 +1,32 @@
+<div>
+  <div class="container">
+    <h3>The Bechdel Test</h3>
+
+    <h4>
+      1. The movie has to have at least two women in it...<br>
+      2. ...who talk to each other<br>
+      3. ...about something besides a man.
+    </h4>
+
+    <p>
+      <a href="https://en.wikipedia.org/wiki/Bechdel_test">Find out more about the Bechdel Test.</a>
+    </p>
+  </div>
+</div>
+
+<div>
+  <div>
+    <h1>
+      <%= @new_movie.title %><br>
+      <small>directed by <%= @new_movie.director %></small>
+    </h1>
+
+    <a href="movies/<%= @new_movie.id %>/view">
+      <img src="<%= @new_movie.image %>" alt="<%=@new_movie.title%>">
+    </a>
+
+    <div>
+      <a href="/">Get Another Movie</a>
+    </div>
+  </div>
+</div>
