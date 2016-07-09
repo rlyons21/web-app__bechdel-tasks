@@ -1,3 +1,9 @@
+After you've forked and cloned this repo, navigate to the directory and run `bin/setup`. This is not a PHP application, so your MAMP installation and Apache won't work for this. Instead, you'll have to start a web server manually by typing `rackup` from the **~/Code/bechdel/** folder. Then go to <http://localhost:9292> to see the website.
+
+When you run `rackup` in terminal, it'll take over that tab entirely. That is, it won't return you to the command-line prompt. The server will be _running_ in that tab, so you'll see all of the server's logs streaming by there as you use the website. (It's pretty cool.)
+
+To quit the server, press `CONTROL + C` in terminal. That'll exit the server and return you to the command-line prompt.
+
 # Issues
 
 Here are a few things you can try to work on in this application. They're organized into categories of difficulty.
