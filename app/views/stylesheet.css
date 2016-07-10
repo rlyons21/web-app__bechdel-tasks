@@ -1,0 +1,10 @@
+.navigation{
+	width:100%;
+	height:78px;
+	display:flex;
+	background-color:#89DADA;
+}
+
+.nav{
+	list-style: none;
+}

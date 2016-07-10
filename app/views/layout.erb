@@ -7,34 +7,36 @@
     <meta name="description" content="">
     <meta name="keywords" content="">
     <meta name="author" content="">
-
     <title>Bollywood Bechdel</title>
   </head>
 
 <body>
 
 <nav>
-  <div class="container">
-    <ul>
+  <div class="navigation">
+    <ul class="nav">
       <li>
-        <a href="/results/list">Bechdel Gallery</a>
+        <a class = "nav__link" href="/">Bollywood Bechdel</a>
+      </li>
+      <li>
+        <a class="nav__link" href="/results/list">Bechdel Gallery</a>
       </li>
 
       <% if @current_user == nil %>
       	<li class="active">
-          <a href="/users/new">Create account</a>
+          <a class="nav__link" href="/users/new">Create account</a>
         </li>
 
         <li class="active">
-          <a href="/login`">Log in</a>
+          <a class = "nav__link" href="/login">Log In</a>
         </li>
       <% else %>
        	<li class="active">
-       		<a href="/users/<%= @current_user.id %>/view">Profile</a>
+       		<a class="nav__link" href="/users/<%= @current_user.id %>/view">Profile</a>
        	</li>
 
        	<li>
-       		<a href="/logout">Logout</a>
+       		<a class="nav__link" href="/logout">Logout</a>
        	</li>
       <% end %>
     </ul>
