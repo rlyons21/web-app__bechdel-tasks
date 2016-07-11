@@ -17,5 +17,15 @@
 <div>
   <div class="container">
     <h1>
-      Bechdel Gallery
+      Entire Gallery
     </h1>
+
+    <% @movie.each_with_index do |movie, i| %>
+        <div class="movie">
+          <a href="/movies/<%= movie.movie_id %>/view">
+            <img src="<%= movie.movie_info.image %>">
+          </a>
+        </div>
+    <% end %>
+  </div>
+</div>
